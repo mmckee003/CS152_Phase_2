@@ -1,0 +1,33 @@
+program -> program function | epsilon
+
+function -> FUNCTION IDENT SEMICOLON BEGIN_PARAMS declarations END_PARAMS BEGIN_LOCALS declarations END_LOCALS BEGIN_BODY statements END_BODY
+
+declarations -> declaration SEMICOLON declarations | epsilon
+
+statements -> statement SEMICOLON statements | epsilon
+
+declaration -> identifiers COLON INTEGER | identifiers COLON ARRAY L_SQUARE_BRACKET NUMBER R_SQUARE_BRACKET OF INTEGER | identifiers COLON ARRAY L_SQUARE_BRACKET NUMBER R_SQUARE_BRACKET L_SQUARE_BRACKET NUMBER R_SQUARE_BRACKET OF INTEGER
+
+identifiers -> IDENT | identifiers COMMA IDENT
+
+statement -> var ASSIGN expression | IF bool_exp THEN statements ENDIF | IF bool_exp THEN statements ELSE statements ENDIF | WHILE bool_exp BEGIN_LOOP statements END_LOOP | DO BEGIN_LOOP statements END_LOOP WHILE bool_exp | FOR var ASSIGN NUMBER SEMICOLON bool_exp SEMICOLON var ASSIGN expression BEGIN_LOOP statements END_LOOP | READ vars | WRITE vars | CONTINUE | RETURN expression
+
+vars -> vars COMMA var | var
+
+bool_exp -> bool_exp OR relation_and_expr |  relation_and_expr
+
+relation_and_expr -> relation_and_expr AND relation_expr | relation_expr
+
+relation_expr -> expression comp expression | NOT expression comp expression | TRUE | NOT TRUE | FALSE | NOT FALSE | L_PAREN bool_exp R_PAREN | NOT L_PAREN bool_exp R_PAREN
+
+comp -> EQ | NEQ | LT | GT | LTE | GTE
+
+expression -> expression ADD multiplicative_expr | expression SUB multiplicative_expr | multiplicative_expr
+
+multiplicative_expr -> multiplicative_expr MULT term | multiplicative_expr DIV term | multiplicative_expr MOD term | term
+
+term -> IDENT L_PAREN expressions R_PAREN | SUB L_PAREN expression R_PAREN | L_PAREN expression R_PAREN | SUB NUMBER | NUMBER | SUB var | var
+
+expressions -> expressions COMMA expression | expression | epsilon
+
+var -> IDENT L_SQUARE_BRACKET expression R_SQUARE_BRACKET L_SQUARE_BRACKET expression R_SQUARE_BRACKET | IDENT L_SQUARE_BRACKET expression R_SQUARE_BRACKET | IDENT

@@ -1,0 +1,328 @@
+program -> epsilon
+ident -> IDENT main
+declarations -> epsilon
+ident -> IDENT n
+identifiers -> ident
+declaration -> identifiers COLON INTEGER
+ident -> IDENT a
+identifiers -> ident
+number -> NUMBER 1000
+declaration -> identifiers COLON ARRAY L_SQUARE_BRACKET number R_SQUARE_BRACKET OF INTEGER
+ident -> IDENT i
+identifiers -> ident
+ident -> IDENT j
+identifiers -> identifiers COMMA ident
+declaration -> identifiers COLON INTEGER
+ident -> IDENT x
+identifiers -> ident
+ident -> IDENT sqrt_n
+identifiers -> identifiers COMMA ident
+declaration -> identifiers COLON INTEGER
+declarations -> epsilon
+declarations -> declaration SEMICOLON declarations
+declarations -> declaration SEMICOLON declarations
+declarations -> declaration SEMICOLON declarations
+declarations -> declaration SEMICOLON declarations
+ident -> IDENT n
+var -> ident
+vars -> var
+statement -> READ vars
+ident -> IDENT x
+var -> ident
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT x
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> GT
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+ident -> IDENT x
+var -> ident
+term -> var
+multiplicative_expr -> multiplicative_expr DIV term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT x
+var -> ident
+ident -> IDENT x
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+ident -> IDENT x
+var -> ident
+term -> var
+multiplicative_expr -> multiplicative_expr DIV term
+expression -> expression ADD multiplicative_expr
+term -> L_PAREN expression R_PAREN
+multiplicative_expr -> term
+number -> NUMBER 2
+term -> number
+multiplicative_expr -> multiplicative_expr DIV term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statement -> WHILE bool_exp BEGIN_LOOP statements END_LOOP
+ident -> IDENT sqrt_n
+var -> ident
+ident -> IDENT x
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT i
+var -> ident
+number -> NUMBER 2
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> LTE
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT a
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+var -> ident L_SQUARE_BRACKET expression R_SQUARE_BRACKET
+number -> NUMBER 0
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT i
+var -> ident
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+number -> NUMBER 1
+term -> number
+multiplicative_expr -> term
+expression -> expression ADD multiplicative_expr
+statement -> var ASSIGN expression
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statement -> WHILE bool_exp BEGIN_LOOP statements END_LOOP
+ident -> IDENT i
+var -> ident
+number -> NUMBER 2
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> LTE
+ident -> IDENT sqrt_n
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT a
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+var -> ident L_SQUARE_BRACKET expression R_SQUARE_BRACKET
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> EQ
+number -> NUMBER 0
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT j
+var -> ident
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> expression ADD multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT j
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> LTE
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT a
+ident -> IDENT j
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+var -> ident L_SQUARE_BRACKET expression R_SQUARE_BRACKET
+number -> NUMBER 1
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT j
+var -> ident
+ident -> IDENT j
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> expression ADD multiplicative_expr
+statement -> var ASSIGN expression
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statement -> WHILE bool_exp BEGIN_LOOP statements END_LOOP
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statement -> IF bool_exp THEN statements ENDIF
+ident -> IDENT i
+var -> ident
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+number -> NUMBER 1
+term -> number
+multiplicative_expr -> term
+expression -> expression ADD multiplicative_expr
+statement -> var ASSIGN expression
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statement -> WHILE bool_exp BEGIN_LOOP statements END_LOOP
+ident -> IDENT i
+var -> ident
+number -> NUMBER 2
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+statement -> var ASSIGN expression
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> LTE
+ident -> IDENT n
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT a
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+var -> ident L_SQUARE_BRACKET expression R_SQUARE_BRACKET
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+comp -> EQ
+number -> NUMBER 0
+term -> number
+multiplicative_expr -> term
+expression -> multiplicative_expr
+relation_exp -> expression comp expression
+relation_and_expr -> relation_expr
+bool_exp -> relation_and_expr
+ident -> IDENT i
+var -> ident
+vars -> var
+statement -> WRITE vars
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statement -> IF bool_exp THEN statements ENDIF
+ident -> IDENT i
+var -> ident
+ident -> IDENT i
+var -> ident
+term -> var
+multiplicative_expr -> term
+expression -> multiplicative_expr
+number -> NUMBER 1
+term -> number
+multiplicative_expr -> term
+expression -> expression ADD multiplicative_expr
+statement -> var ASSIGN expression
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statement -> WHILE bool_exp BEGIN_LOOP statements END_LOOP
+statements -> epsilon
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+statements -> statement SEMICOLON statements
+function -> FUNCTION ident SEMICOLON BEGIN_PARAMS declarations END_PARAMS BEGIN_LOCALS declarations END_LOCALS BEGIN_BODY statements END_BODY
+program -> program function
